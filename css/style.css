@@ -23,7 +23,7 @@
 
 @media (max-width: 768px) {
     .navbar-logo {
-        max-height: 40px; 
+        max-height: 60px; 
         width:auto;/* Adjust for smaller screens */
     }
 }
