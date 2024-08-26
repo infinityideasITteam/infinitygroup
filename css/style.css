@@ -295,7 +295,7 @@
 } */
 
 .card-back2 {
-    background: #007bff;
+    background: linear-gradient(180deg, rgba(103,136,131,1) 0%, rgba(61, 71, 83) 100%);
     color: #fff;
     transform: rotateY(180deg);
 }
