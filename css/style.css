@@ -144,3 +144,107 @@
     max-width: 100%;
     height: auto;
 }
+/* Custom CSS for scrolling logos and rounded images */
+.scroll-container {
+    height: 70vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.scroll-list {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+}
+
+.scroll-container.left .scroll-list {
+    animation: scrollDown 10s linear infinite;
+}
+
+.scroll-container.right .scroll-list {
+    animation: scrollUp 10s linear infinite;
+}
+
+.scroll-container img {
+    width: 150px;
+    height: 150px;
+    margin: 15px 0;
+    border-radius: 50%; /* Rounded images */
+}
+
+@keyframes scrollDown {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+@keyframes scrollUp {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes scrollRight {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 70vh;
+    padding: 0 10px; /* Added padding for smaller screens */
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .scroll-container {
+        height: 240px;
+        flex-direction: row;
+    }
+
+    .scroll-container.left .scroll-list {
+        flex-direction: row;
+        animation: scrollRight 15s linear infinite;
+    }
+
+    .scroll-container.right .scroll-list {
+        flex-direction: row;
+        animation: scrollLeft 15s linear infinite;
+    }
+
+    .scroll-container img {
+        width: 100px; /* Slightly smaller image size for mobile */
+        height: 100px;
+        margin: 0 10px; /* Adjust margin for horizontal scrolling */
+    }
+
+    .content-container {
+        padding: 20px 10px; /* Adjust padding for mobile */
+        height: 250px;
+    }
+}

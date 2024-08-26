@@ -39,3 +39,60 @@ function toggletext5(imgElement) {
 function toggletext6(imgElement) {
     imgElement.classList.toggle('clicked');
 }
+
+// JavaScript to control scrolling effect
+document.addEventListener('DOMContentLoaded', function() {
+    const leftSide = document.getElementById('leftSide');
+    const rightSide = document.getElementById('rightSide');
+    const leftList = leftSide.querySelector('.scroll-list');
+    const rightList = rightSide.querySelector('.scroll-list');
+
+    let leftAnimation, rightAnimation;
+
+    const pauseAnimations = () => {
+        leftList.style.animationPlayState = 'paused';
+        rightList.style.animationPlayState = 'paused';
+    };
+
+    const resumeAnimations = () => {
+        leftList.style.animationPlayState = 'running';
+        rightList.style.animationPlayState = 'running';
+    };
+
+    leftSide.addEventListener('mouseenter', function() {
+        pauseAnimations();
+        rightList.style.animationPlayState = 'running'; // Ensure right side continues
+    });
+
+    leftSide.addEventListener('mouseleave', function() {
+        resumeAnimations();
+    });
+
+    rightSide.addEventListener('mouseenter', function() {
+        pauseAnimations();
+        leftList.style.animationPlayState = 'running'; // Ensure left side continues
+    });
+
+    rightSide.addEventListener('mouseleave', function() {
+        resumeAnimations();
+    });
+
+    // Handle touch events for mobile devices
+    leftSide.addEventListener('touchstart', function() {
+        pauseAnimations();
+        rightList.style.animationPlayState = 'running'; // Ensure right side continues
+    });
+
+    leftSide.addEventListener('touchend', function() {
+        resumeAnimations();
+    });
+
+    rightSide.addEventListener('touchstart', function() {
+        pauseAnimations();
+        leftList.style.animationPlayState = 'running'; // Ensure left side continues
+    });
+
+    rightSide.addEventListener('touchend', function() {
+        resumeAnimations();
+    });
+});
