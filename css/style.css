@@ -146,7 +146,7 @@
 }
 /* Custom CSS for scrolling logos and rounded images */
 .scroll-container {
-    height: 70vh;
+    height: 100vh;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -216,15 +216,17 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 70vh;
+    height: 100vh;
     padding: 0 10px; /* Added padding for smaller screens */
+    position: relative; /* Ensure positioning context for mobile layout */
+    z-index: 1; /* Ensure text appears above scrolling logos */
 }
 
 /* Adjustments for smaller screens */
 @media (max-width: 768px) {
     .scroll-container {
-        height: 240px;
-        flex-direction: row;
+        height: 240px; /* Fixed height for horizontal scrolling */
+        flex-direction: row; /* Horizontal layout for scrolling */
     }
 
     .scroll-container.left .scroll-list {
@@ -245,6 +247,71 @@
 
     .content-container {
         padding: 20px 10px; /* Adjust padding for mobile */
-        height: 250px;
+        height: auto; /* Allow height to adapt to content */
+        z-index: 2; /* Ensure the content is on top */
+        position: relative; /* Maintain positioning context */
+    }
+}
+ /* Custom CSS for card flip effect */
+ /* Custom CSS for card flip effect */
+/* Custom CSS for card flip effect */
+.card-container {
+    perspective: 1000px; /* Creates a 3D perspective */
+}
+
+.card2 {
+    width: 100%;
+    height: 300px; /* Set a fixed height for the cards */
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card-inner2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card-front2, .card-back2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* .card-front2 {
+    background: #fff;
+} */
+
+.card-back2 {
+    background: #007bff;
+    color: #fff;
+    transform: rotateY(180deg);
+}
+
+.card2:hover .card-inner2 {
+    transform: rotateY(180deg);
+}
+
+.card2 img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .card2 {
+        height: 200px; /* Adjust height for smaller screens */
     }
 }
