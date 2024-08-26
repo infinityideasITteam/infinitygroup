@@ -161,11 +161,11 @@
 }
 
 .scroll-container.left .scroll-list {
-    animation: scrollDown 10s linear infinite;
+    animation: scrollDown 25s linear infinite;
 }
 
 .scroll-container.right .scroll-list {
-    animation: scrollUp 10s linear infinite;
+    animation: scrollUp 25s linear infinite;
 }
 
 .scroll-container img {
