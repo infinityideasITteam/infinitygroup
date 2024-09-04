@@ -84,9 +84,9 @@ Options -Indexes
 # END HTTP Strict Transport Security (HSTS)
 
 # BEGIN Content Security Policy (CSP)
-<IfModule mod_headers.c>
-    Header set Content-Security-Policy "default-src 'self'; script-src 'self' https://trustedscripts.example.com; object-src 'none'; style-src 'self' https://trustedstyles.example.com; img-src 'self' https://trustedimages.example.com;"
-</IfModule>
+# <IfModule mod_headers.c>
+#     Header set Content-Security-Policy "default-src 'self'; script-src 'self' https://trustedscripts.example.com; object-src 'none'; style-src 'self' https://trustedstyles.example.com; img-src 'self' https://trustedimages.example.com;"
+# </IfModule>
 # END Content Security Policy (CSP)
 
 # BEGIN Minify CSS, JavaScript, and HTML
